@@ -1,0 +1,9 @@
+Notes:
+1. to cast a hashset to an arraylist, all you need to do is initialize a new arraylist with the existing
+hashset as the constructor in parenthesis
+
+
+
+Questions:
+
+How do I initialize an array of unspecified length? Isn't it something to do with new int[0] or something like that?
