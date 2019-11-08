@@ -10,12 +10,15 @@ public class TreeTighten {
                 t.left = tighten(t.left);
             }
             if(t.right != null && t.left == null){
-                t = t.right;
-                t = tighten(t);
+                return tighten(t.right);
+                //just saying t = tighten t wouldn't work because that would just be an infinite recursion.
+                //it would be an infinite recursion because saying t = tighten t would take the function right back to that same space,
+                //over and over again.
             }
             if(t.right == null && t.left != null){
-             t = t.left;
-             t = tighten(t);
+                return tighten(t.left);
+                // this is overwriting t with t.left because it goes back into the function and then returns t (if it's a leaf),
+                //whihc was originally t.left
             }
         }
         return t;
